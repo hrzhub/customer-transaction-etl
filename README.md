@@ -1,27 +1,43 @@
-# Customer Transactions ETL + API
+# Customer Transactions ETL Pipeline
 
-A simple ETL pipeline that ingests CSV transaction data, validates and loads into MySQL, and exposes basic analytics via a Flask API.
+A simple ETL pipeline that extracts customer transaction data from CSV, validates and transforms it using Python, and loads it into MySQL.
+(Future enhancement: expose analytics endpoints via Flask API.)
 
-## Quickstart (local)
+## Quickstart (Local)
 
-1. `git clone <repo>`
-2. `cp .env.example .env` and edit if needed
-3. `docker-compose up -d` (starts MySQL)
-4. `docker exec -it <db_container> bash` then `mysql -u root -p` and run `sql/schema.sql`
-5. `python -m venv venv && source venv/bin/activate`
-6. `pip install -r api/requirements.txt` (requirements file should include Flask, SQLAlchemy, pymysql)
-7. `python etl/etl.py`
-8. `python api/app.py` and visit `http://localhost:5000/metrics/daily-volume`
+1. Clone the Repository
 
-## What to show in interviews
+git clone https://github.com/hrzhub/customer-transaction-etl.git
+cd /path/to/customer-transaction-etl
 
-- Table schema and normalization decisions
-- How the ETL handles duplicates and type errors
-- Simple performance thought: indexes on txn_time, txn_id
-- How you'd move MySQL to AWS RDS and run ETL in a Lambda / ECS task (explain, or add scripts later)
+2. Setup Environment Variables
 
-## Next steps (optional)
+copy .env.example .env
 
-- Add unit tests for validators
-- Add Dockerfile for Flask app and docker-compose service
-- Implement Airflow DAG for the ETL
+Then update your MySQL credentials inside .env.
+
+3. Create and Activate Virtual Environment
+
+python -m venv venv
+venv\Scripts\activate
+
+4. Install Dependencies
+
+pip install -r api/requirements.txt
+
+5. Setup MySQL Schema
+
+Open MySQL Workbench and run the SQL in:
+
+sql/schema.sql
+
+6. Execute the ETL Pipeline
+
+python -m etl.etl
+
+### Features
+
+- ETL Pipeline: Extract (CSV) → Transform (validate, clean) → Load (MySQL)
+- Data Validation: Ensures correct transaction formats and valid data types
+- Modular Design: etl/ for pipeline logic, data/ for sources, sql/ for schema
+- Configurable Environment: .env file for database credentials
