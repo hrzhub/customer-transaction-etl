@@ -1,0 +1,11 @@
+txn_id,account_id,customer_id,name,email,amount,currency,txn_time,status,account_type
+txn-0001,acc-001,cust-001,Muhammad,muhammad@example.com,150.00,MYR,2025-10-01T10:00:00,completed,checking
+txn-0002,acc-002,cust-002,Hana,hana@example.com,250.50,MYR,2025-10-02T11:30:00,pending,savings
+txn-0003,acc-003,cust-003,Daniel,daniel@example.com,999.99,USD,2025-10-03T14:45:00,completed,checking
+txn-0004,acc-004,cust-004,Aisha,aisha@example.com,42.00,MYR,2025-10-04T09:15:00,failed,savings
+txn-0005,acc-005,cust-005,Lucas,lucas@example.com,530.25,SGD,2025-10-05T13:00:00,completed,checking
+txn-0006,acc-001,cust-001,Muhammad,muhammad@example.com,75.00,MYR,2025-10-06T08:00:00,completed,checking
+txn-0007,acc-002,cust-002,Hana,hana@example.com,120.75,MYR,2025-10-06T09:30:00,failed,savings
+txn-0008,acc-006,cust-006,Liam,liam@example.com,320.00,EUR,2025-10-07T17:20:00,completed,checking
+txn-0009,acc-007,cust-007,Siti,siti@example.com,210.10,MYR,2025-10-08T20:00:00,completed,savings
+txn-0010,acc-008,cust-008,Noah,noah@example.com,470.85,USD,2025-10-09T21:45:00,pending,checking
