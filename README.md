@@ -7,7 +7,7 @@ A simple ETL pipeline that extracts customer transaction data from CSV, validate
 
 1. Clone the Repository
 
-> git clone https://github.com/hrzhub/customer-transaction-etl.git
+> git clone https://github.com/hrzhub/customer-transaction-etl.git <br>
 > cd /path/to/customer-transaction-etl
 
 2. Setup Environment Variables
@@ -18,7 +18,7 @@ Then update your MySQL credentials inside .env.
 
 3. Create and Activate Virtual Environment
 
-> python -m venv venv
+> python -m venv venv <br>
 > venv\Scripts\activate
 
 4. Install Dependencies
